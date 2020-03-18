@@ -1,0 +1,120 @@
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://nikhilkadyan.com">
+      <p class="title is-4">ARYA CONFESSIONS</p>
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" (click)="navbarActive = !navbarActive">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu" [class.is-active]="navbarActive">
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" (click)="modalActive = true">
+            <strong>Admin</strong>
+          </a>
+          <a class="button is-light" href="https://www.instagram.com/arya.confessions" target="_blank">
+            Contact
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<div class="modal" [class.is-active]="modalActive">
+  <div class="modal-background" (click)="modalActive = false"></div>
+  <div class="modal-content">
+    <app-secrets></app-secrets>
+  </div>
+  <button class="modal-close is-large" aria-label="close" (click)="modalActive = false"></button>
+</div>
+
+<div class="hero is-fullheight custom_hero_bg">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-6 is-offset-3">
+
+          <div class="container has-text-centered">
+            <p class="subtitle is-5 has-text-light">Psttt we all have a secret.</p>
+            <p class="title is-2 has-text-white">Arya Confessions</p>
+            <p class="subtitle is-5 has-text-grey-lighter">
+              Consider us a little angel who will help to spread your words not your name :)
+              </p>
+            <div>
+              <a class="button is-success" href="#form">Share Yours</a>
+            </div>
+          </div>  <!-- End Single Column -->
+        </div> <!-- End Columns -->
+      </div> <!-- End Container -->
+    </div>
+  </div>
+</div> <!-- End Hero -->
+
+<div class="hero is-medium" id="form">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+
+        <div class="column is-6">
+          <figure class="image">
+            <img src="https://cdn.dribbble.com/users/2071065/screenshots/6474783/dribble_4-10_2x.png" alt="">
+          </figure>
+        </div>
+        
+        <div class="column is-6">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">Your Super Secret</p>
+            </header>
+            <div class="card-content">
+              
+
+              <div class="field">
+                <label class="label">Your Name</label>
+                <div class="control has-icons-left">
+                  <input class="input" type="text" placeholder="Your name" [(ngModel)]="name">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <p class="help is-success">( We won't share this :P )</p>
+              </div>
+
+              <div class="field">
+                <label class="label">Your Course</label>
+                <div class="control has-icons-left">
+                  <input class="input" type="text" placeholder="Your course" [(ngModel)]="course">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Textarea" [(ngModel)]="message"></textarea>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="card-footer">
+              <a class="card-footer-item" (click)="addSecret()">Share Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
